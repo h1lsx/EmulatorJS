@@ -191,18 +191,6 @@
             }
             async function detectAdBlock(url) {
                 let adBlockEnabled = false
-                const googleAdUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
-                try {
-                    await fetch(new Request(googleAdUrl)).catch(_ => adBlockEnabled = true)
-                } catch (e) {
-                    adBlockEnabled = true
-                } finally {
-                    window.EJS_ready = function() {
-                        if (adBlockEnabled) {
-                            window.EJS_adBlocked("https://emulatorjs.org/?blocked");
-                        }
-                    }
-                }
             }
             box.ondragover = () => box.setAttribute("drag", true);
             box.ondragleave = () => box.removeAttribute("drag");
