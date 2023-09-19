@@ -185,15 +185,7 @@
                 window.EJS_core = core;
                 window.EJS_pathtodata = "data/";
                 window.EJS_startOnLoaded = true;
-
-                if (window.location.hostname === "demo.emulatorjs.org") {
-                    window.EJS_AdUrl = "https://ads.emulatorjs.org/";
-                    window.EJS_ready = function() {
-                        detectAdBlock("https://ads.emulatorjs.org/?blocked");
-                    }
-                }
                 
-
                 script.src = "data/loader.js";
                 document.body.appendChild(script);
             }
